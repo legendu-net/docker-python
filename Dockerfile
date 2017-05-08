@@ -4,6 +4,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         sudo \
         gcc \
+        vim-nox git \
         python3 python3-pip \
         python3-all-dev python3-setuptools build-essential python3-wheel \
     && apt-get autoremove \
