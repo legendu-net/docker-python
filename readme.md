@@ -1,4 +1,4 @@
-# dclong/jupyterlab
+# dclong/flask
 
 Flask in Docker. 
 
