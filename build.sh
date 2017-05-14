@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t dclong/flask .
+docker build -t dclong/python3 .

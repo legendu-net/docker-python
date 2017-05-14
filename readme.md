@@ -1,6 +1,6 @@
 # dclong/flask
 
-Flask in Docker. 
+Python3 in Docker. 
 
 ## About the Author
 
@@ -9,18 +9,18 @@ Flask in Docker.
 ## Usage 
 
 ```
-docker run -d -p 5000:5000 \
+docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
     -v $HOME:/wwwroot \
-    dclong/flask
+    dclong/python3
 ```
 
 ```
-docker run -d -p 5000:5000 \
+docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -v $HOME:/wwwroot \
-    dclong/flask
+    dclong/python3
 ```
