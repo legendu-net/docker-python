@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t dclong/python3 .
+docker build -t dclong/python .

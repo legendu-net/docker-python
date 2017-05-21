@@ -1,6 +1,6 @@
-# dclong/flask
+# dclong/python
 
-Python3 in Docker. 
+Python in Docker. 
 
 ## About the Author
 
@@ -14,7 +14,7 @@ docker run -d \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
     -v $HOME:/wwwroot \
-    dclong/python3
+    dclong/python
 ```
 
 ```
@@ -22,5 +22,5 @@ docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -v $HOME:/wwwroot \
-    dclong/python3
+    dclong/python
 ```
