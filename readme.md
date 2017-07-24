@@ -13,7 +13,6 @@ docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
-    -v $HOME:/wwwroot \
     dclong/python
 ```
 
@@ -21,6 +20,5 @@ docker run -d \
 docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
-    -v $HOME:/wwwroot \
     dclong/python
 ```
