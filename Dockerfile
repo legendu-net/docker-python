@@ -10,3 +10,5 @@ RUN apt-get update -y \
     && apt-get autoremove \
     && apt-get autoclean 
 
+# COPY scripts /scripts
+# ENTRYPOINT ["/scripts/init.sh"]

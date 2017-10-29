@@ -12,11 +12,4 @@ echo ${USER}:${PASSWORD} | chpasswd
 gpasswd -a $USER sudo
 
 cd $HOME
-su -m $USER && echo $PASSWORD | sudo -S -u $USER ${1:-/launch.sh}
-# if [[ "$#" == 0 ]]; then
-    # su -m $USER && echo $PASSWORD | sudo -S -u $USER /script.sh
-# else
-    # for arg in "$@"; do
-        # su -m $USER && echo $PASSWORD | sudo -S -u $USER $arg &
-    # done
-# fi
+su -m $USER && echo $PASSWORD | sudo -S -u $USER ${1:-/scripts/launch.sh}
