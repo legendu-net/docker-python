@@ -1,12 +1,12 @@
 FROM dclong/ubuntu_b
 
-RUN apt-get update -y \
-    && apt-get install -y \
-        python3 python3-pip \
-        python3-all-dev python3-setuptools build-essential python3-wheel \
-        python python-pip \
-        python-dev python-setuptools python-wheel \
-    && pip3 install --upgrade pip \
-    && pip install --upgrade pip \
-    && apt-get autoremove \
-    && apt-get autoclean 
+ENV PATH=/opt/conda/bin:$PATH
+
+RUN curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /scripts/miniconda.sh \
+    && bash /scripts/miniconda.sh -bfp /opt/conda \
+    && rm -rf /scripts/miniconda.sh \
+    && conda update -n base conda \
+    && conda install -y python=3 \
+    && conda clean --all --yes
+
+RUN echo 'export PATH=/opt/conda/bin:$PATH' >> /etc/profile
