@@ -2,52 +2,51 @@
 
 Python in Docker. 
 
-## About the Author
-
-[Personal Blog](http://www.legendu.net)   |   [GitHub](https://github.com/dclong)   |   [Bitbucket](https://bitbucket.org/dclong/)   |   [LinkedIn](http://www.linkedin.com/in/ben-chuanlong-du-1239b221/)
-
 ## Usage in Linux/Unix
 
+Please refer to the Section
+[Usage](http://www.legendu.net/en/blog/my-docker-images/#usage)
+of the post [My Docker Images](http://www.legendu.net/en/blog/my-docker-images/) 
+for detailed instruction on how to use the Docker image.
+
+The following command starts a container 
+and mounts the current working directory and `/home` on the host machine 
+to `/workdir` and `/home_host` in the container respectively.
 ```
 docker run -d \
+    --name python \
     --log-opt max-size=50m \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
+    -e DOCKER_GROUP_ID=`id -g` \
+    -v `pwd`:/workdir \
+    -v `dirname $HOME`:/home_host \
     dclong/python
 ```
-
+The following command (only works on Linux) does the same as the above one 
+except that it limits the use of CPU and memory.
 ```
 docker run -d \
+    --name python \
     --log-opt max-size=50m \
+    --memory=$(($(head -n 1 /proc/meminfo | awk '{print $2}') * 4 / 5))k \
+    --cpus=$((`nproc` - 1)) \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
+    -e DOCKER_PASSWORD=`id -un` \
+    -e DOCKER_GROUP_ID=`id -g` \
+    -v `pwd`:/workdir \
+    -v `dirname $HOME`:/home_host \
     dclong/python
 ```
-## Image Tree Related to [dclong/python](https://hub.docker.com/r/dclong/python/)
 
-[dclong/ubuntu_b](https://hub.docker.com/r/dclong/ubuntu_b/)
+## [Detailed Information](http://www.legendu.net/en/blog/my-docker-images/#list-of-images-and-detailed-information) 
 
-- [dclong/python](https://hub.docker.com/r/dclong/python/)
-    - [dclong/dryscrape](https://hub.docker.com/r/dclong/dryscrape/)
-    - [dclong/flask](https://hub.docker.com/r/dclong/flask/)
-    - [dclong/jupyter](https://hub.docker.com/r/dclong/jupyter/)
-        - [dclong/jupyter-beakerx](https://hub.docker.com/r/dclong/jupyter-beakerx/)
-    - [dclong/bokeh](https://hub.docker.com/r/dclong/bokeh/)
-    - [dclong/jupyterlab](https://hub.docker.com/r/dclong/jupyterlab/)
-        - [dclong/jupyterlab-ts](https://hub.docker.com/r/dclong/jupyterlab-ts/)
-        - [dclong/jupyterlab-js](https://hub.docker.com/r/dclong/jupyterlab-js/)
-        - [dclong/jupyterlab-beakerx](https://hub.docker.com/r/dclong/jupyterlab-beakerx/)
-        - [dclong/jupyterlab-tdodbc](https://hub.docker.com/r/dclong/jupyterlab-tdodbc/)
-        - [dclong/jupyterlab-jdk](https://hub.docker.com/r/dclong/jupyterlab-jdk/)
-            - [dclong/jupyterlab-scala](https://hub.docker.com/r/dclong/jupyterlab-scala/)
-                - [dclong/jupyterlab-spark](https://hub.docker.com/r/dclong/jupyterlab-spark/)
-            - [dclong/jupyterlab-antlr4](https://hub.docker.com/r/dclong/jupyterlab-antlr4/)
-        - [dclong/jupyterlab-py](https://hub.docker.com/r/dclong/jupyterlab-py/)
-        - [dclong/jupyterlab-rb](https://hub.docker.com/r/dclong/jupyterlab-rb/)
-            - [dclong/jupyterlab-rp](https://hub.docker.com/r/dclong/jupyterlab-rp/)
-                - [dclong/jupyterlab-rp-py](https://hub.docker.com/r/dclong/jupyterlab-rp-py/)
-                - [dclong/jupyterlab-rstudio](https://hub.docker.com/r/dclong/jupyterlab-rstudio/)
-                    - [dclong/jupyterlab-rstudio-py](https://hub.docker.com/r/dclong/jupyterlab-rstudio-py/)
-                        - [dclong/jupyterlab-ds](https://hub.docker.com/r/dclong/jupyterlab-ds/)
-                            - [dclong/jupyterhub-ds](https://hub.docker.com/r/dclong/jupyterhub-ds/)
+## [Use the JupyterHub Server](http://www.legendu.net/en/blog/my-docker-images/#use-the-jupyterhub-server)
+
+## [Add a New User to the JupyterHub Server](http://www.legendu.net/en/blog/my-docker-images/#add-a-new-user-to-the-jupyterhub-server)
+
+## [Known Issues](http://www.legendu.net/en/blog/my-docker-images/#known-issues)
+
+## [About the Author](http://www.legendu.net/pages/about)
