@@ -1,6 +1,6 @@
 # dclong/python [@DockerHub](https://hub.docker.com/r/dclong/python/) | [@GitHub](https://github.com/dclong/docker-python)
 
-Python with `pip` in Docker. 
+Python with `pip` (3rd-party Python packages are not installed) in Docker. 
 
 ## Usage in Linux/Unix
 
