@@ -24,8 +24,8 @@ docker run -it \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/python /command/to/run
 ```
 The following command (only works on Linux) does the same as the above one 
@@ -40,8 +40,8 @@ docker run -it \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/python /command/to/run
 ```
 ## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
