@@ -1,4 +1,6 @@
+# NAME: dclong/python
 FROM dclong/ubuntu_b
+# GIT: https://github.com/dclong/docker-ubuntu_b.git
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
