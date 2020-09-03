@@ -10,3 +10,7 @@ RUN apt-get update -y \
     && pip3 install --no-cache-dir mypy pylint yapf pytest ipython \
     && apt-get autoremove \
     && apt-get clean
+    
+ENV PYENV_ROOT=/opt/pyenv PATH=/opt/pyenv/bin:$PATH
+RUN xinstall -y pyenv -ic \
+    && pyenv install 3.7.8
