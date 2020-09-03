@@ -12,6 +12,5 @@ RUN apt-get update -y \
     && apt-get clean
     
 ENV PYENV_ROOT=/opt/pyenv
-RUN mkdir /opt/pyenv \
-    && xinstall pyenv -ic \
+RUN xinstall pyenv -ic \
     && pyenv install 3.7.8
