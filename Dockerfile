@@ -11,6 +11,6 @@ RUN apt-get update -y \
     && apt-get autoremove \
     && apt-get clean
     
-ENV PYENV_ROOT=/opt/pyenv PATHH=/opt/pyenv/bin:$PATH
+ENV PYENV_ROOT=/opt/pyenv PATH=/opt/pyenv/bin:$PATH
 RUN xinstall pyenv -ic \
     && pyenv install 3.7.8
