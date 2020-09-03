@@ -4,6 +4,7 @@ FROM dclong/ubuntu_b
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
+        libbz2-dev \
         python3 python3-pip python3-venv \
         python3-all-dev python3-setuptools build-essential python3-wheel \
     && pip3 install git+https://github.com/dclong/xinstall@master \
