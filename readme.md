@@ -1,6 +1,6 @@
 # dclong/python [@DockerHub](https://hub.docker.com/r/dclong/python/) | [@GitHub](https://github.com/dclong/docker-python)
 
-Python with `pip` (3rd-party Python packages are not installed) in Docker. 
+Python 3 with `pip` (3rd-party Python packages are not installed) in Docker. 
 
 ## Prerequisite
 You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/) before you use this Docker image.
