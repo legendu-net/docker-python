@@ -6,7 +6,7 @@ RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         python3 python3-pip python3-venv \
         python3-all-dev python3-setuptools build-essential python3-wheel \
-    && pip3 install git+https://github.com/dclong/xinstall@master \
+    && pip3 install git+https://github.com/dclong/xinstall@main \
     && pip3 install --no-cache-dir pytype pylint yapf pytest ipython \
     && ln -svf /usr/bin/python3 /usr/bin/python \
     && apt-get autoremove \
