@@ -9,6 +9,7 @@ RUN apt-get update -y \
     && pip3 install git+https://github.com/dclong/xinstall@main \
     && pip3 install --no-cache-dir pytype pylint yapf pytest ipython \
     && ln -svf /usr/bin/python3 /usr/bin/python \
+    && ln -svf /usr/bin/pip3 /usr/bin/pip \
     && apt-get autoremove \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
