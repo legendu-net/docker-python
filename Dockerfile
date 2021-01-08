@@ -19,4 +19,5 @@ RUN apt-get update -y \
 # pyenv
 ENV PYENV_ROOT=/opt/pyenv PATH=/opt/pyenv/bin:$PATH
 RUN xinstall -y pyenv -ic \
-    && pyenv install 3.7.9
+    && pyenv install 3.7.9 \
+    && ln -s /opt/pyenv/versions/3.7.9/bin/python /usr/bin/python3.7
