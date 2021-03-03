@@ -19,6 +19,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUBACTIONS }} 
           title: Merge dev into main
-          
           branch: dev
-          assignees: dclong  
+          author: dclong <dclong@users.noreply.github.com>
+          assignees: dclong
