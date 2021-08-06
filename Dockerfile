@@ -20,6 +20,7 @@ RUN apt-get update -y \
 ENV PYENV_ROOT=/opt/pyenv PATH=/opt/pyenv/bin:$PATH
 RUN xinstall -y pyenv -ic \
     && pyenv install 3.7.10 \
-    && ln -s /opt/pyenv/versions/3.7.10/bin/python /usr/bin/python3.7    
+    && ln -s /opt/pyenv/versions/3.7.10/bin/python /usr/bin/python3.7 \
+    && find /opt/ -type d -name '.git' | xargs rm -rf
 
 COPY scripts/ /scripts/
