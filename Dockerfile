@@ -15,7 +15,7 @@ RUN apt-get update -y \
     && pip3 cache purge \
     && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # pyenv
 ENV PYENV_ROOT=/opt/pyenv PATH=/opt/pyenv/bin:$PATH
@@ -23,6 +23,6 @@ RUN xinstall -y pyenv -ic \
     && pyenv install 3.7.10 \
     && ln -s /opt/pyenv/versions/3.7.10/bin/python /usr/bin/python3.7 \
     && find /opt/ -type d -name '.git' | xargs rm -rf \
-    && pip3 cache purge
+    && /usr/bin/python3.7 -m pip cache purge
 
 COPY scripts/ /scripts/
