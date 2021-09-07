@@ -13,8 +13,8 @@ RUN apt-get update -y \
     && ln -svf /usr/bin/python3 /usr/bin/python \
     && ln -svf /usr/bin/pip3 /usr/bin/pip \
     && pip3 cache purge \
-    && apt-get autoremove \
-    && apt-get clean \
+    && apt-get autoremove -y \
+    && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
 # pyenv
