@@ -6,6 +6,7 @@ RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         python3 python3-pip python3-venv \
         python3-all-dev python3-setuptools build-essential python3-wheel python3-apt \
+    && pip3 install -U pip \
     && pip3 install \
         pytype pylint yapf pytest ipython \
         git+https://github.com/dclong/xinstall@main \
