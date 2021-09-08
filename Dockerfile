@@ -13,7 +13,7 @@ RUN apt-get update -y \
         wajig \
     && ln -svf /usr/bin/python3 /usr/bin/python \
     && ln -svf /usr/bin/pip3 /usr/bin/pip \
-    && pip3 cache purge \
+    && python3 -m pip cache purge \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
@@ -21,8 +21,8 @@ RUN apt-get update -y \
 # pyenv
 ENV PYENV_ROOT=/opt/pyenv PATH=/opt/pyenv/bin:$PATH
 RUN xinstall -y pyenv -ic \
-    && pyenv install 3.7.10 \
-    && ln -s /opt/pyenv/versions/3.7.10/bin/python /usr/bin/python3.7 \
+    && pyenv install 3.7.12 \
+    && ln -s /opt/pyenv/versions/3.7.*/bin/python /usr/bin/python3.7 \
     && find /opt/ -type d -name '.git' | xargs rm -rf \
     && /usr/bin/python3.7 -m pip cache purge
 
