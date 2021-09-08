@@ -13,7 +13,7 @@ RUN apt-get update -y \
         wajig \
     && ln -svf /usr/bin/python3 /usr/bin/python \
     && ln -svf /usr/bin/pip3 /usr/bin/pip \
-    && pip3 cache purge \
+    && python3 -m pip cache purge \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
