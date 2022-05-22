@@ -16,12 +16,12 @@ RUN apt-get update -y \
     && /scripts/sys/purge_cache.sh
 
 # pyenv
-ENV PYENV_ROOT=/opt/pyenv PATH=/opt/pyenv/bin:$PATH
-RUN xinstall -y pyenv -ic \
-    && pyenv install 3.7.12 \
-    && ln -s /opt/pyenv/versions/3.7.*/bin/python /usr/bin/python3.7 \
-    && /usr/bin/python3.7 -m pip install -U pip \
-    && /scripts/sys/purge_cache.sh \
-    && find /opt/ -type d -name '.git' | xargs rm -rf
+#ENV PYENV_ROOT=/opt/pyenv PATH=/opt/pyenv/bin:$PATH
+#RUN xinstall -y pyenv -ic \
+#    && pyenv install 3.7.12 \
+#    && ln -s /opt/pyenv/versions/3.7.*/bin/python /usr/bin/python3.7 \
+#    && /usr/bin/python3.7 -m pip install -U pip \
+#    && /scripts/sys/purge_cache.sh \
+#    && find /opt/ -type d -name '.git' | xargs rm -rf
 
 COPY scripts/ /scripts/
