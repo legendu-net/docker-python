@@ -9,8 +9,7 @@ RUN apt-get update -y \
     && pip3 install -U pip \
     && pip3 install \
         pytype pylint yapf pytest ipython \
-        git+https://github.com/dclong/xinstall@main \
-        wajig \
+        xinstall wajig \
     && ln -svf /usr/bin/python3 /usr/bin/python \
     && ln -svf /usr/bin/pip3 /usr/bin/pip \
     && /scripts/sys/purge_cache.sh
