@@ -6,12 +6,26 @@
     rm-improved
     bat
   ];
-  env = {};
+  env = {
+    PATH = [
+      "$HOME/.local/bin"
+    ];
+  };
   idx = {
     # check extensions on https://open-vsx.org/
     extensions = [
       "asvetliakov.vscode-neovim"
     ];
+    workspace = {
+      onCreate = {
+      };
+      onStart = {
+        icon = ''
+        curl -sSL https://raw.githubusercontent.com/legendu-net/icon/main/install_icon.sh | bash -s -- \
+            -d ~/.local/bin
+        '';
+      };
+    };
     # Enable previews and customize configuration
     previews = {};
   };
