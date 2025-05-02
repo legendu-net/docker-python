@@ -8,7 +8,7 @@ RUN apt-get update -y \
         python3-all-dev python3-setuptools build-essential python3-wheel python3-apt \
     #&& pip3 install -U --break-system-packages pip \
     && pip3 install --break-system-packages \
-        pytype pylint black[jupyter] isort pytest ipython \
+        pytype ruff pytest ipython \
         wajig \
     && ln -svf /usr/bin/python3 /usr/bin/python \
     && ln -svf /usr/bin/pip3 /usr/bin/pip \
