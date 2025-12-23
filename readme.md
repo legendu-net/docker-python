@@ -2,12 +2,6 @@
 
 Python 3 in Docker. 
 
-## Third-party Python Libraries Installed
-
-- ipython
-- pytype pylint yapf pytest
-- [xinstall](https://github.com/dclong/xinstall)
-
 ## Prerequisite
 You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/) before you use this Docker image.
 
