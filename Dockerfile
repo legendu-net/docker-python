@@ -4,7 +4,7 @@ FROM dclong/base
 
 RUN apt-get -y update \
     && apt-get -y install --no-install-recommends \
-        python3-all-dev python3-venv build-essential \
+        python3-all-dev python3-venv python3-apt build-essential \
     && python3 -m venv /opt/venv \
     && /opt/venv/bin/pip3 install \
         pytype ruff pytest \
