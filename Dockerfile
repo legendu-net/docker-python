@@ -4,11 +4,11 @@ FROM dclong/base
 
 RUN apt-get -y update \
     && apt-get -y install --no-install-recommends \
-        python3-all-dev python3-venv python3-apt build-essential \
+        python3-all-dev python3-venv build-essential \
     && python3 -m venv /opt/venv \
     && /opt/venv/bin/pip3 install \
         pytype ruff pytest \
-        ipython wajig \
+        ipython \
     && curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR="/usr/local/bin" sh \
     && /scripts/sys/purge_cache.sh
 
